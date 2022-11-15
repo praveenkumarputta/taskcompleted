@@ -49,6 +49,7 @@ public class NewTrasfer {// TransferFiles class name
 			// here we are creating connection with source
 			sourcesftpChannel = (ChannelSftp) sourceSession.openChannel("sftp");
 			sourcesftpChannel.connect(); // connect() is the method from Channel class used to establish connection
+			
 
 			targetSession = createSFTPSession(targetuser, targetip, targetpwd, port);
 			targetftpChannel = (ChannelSftp) targetSession.openChannel("sftp");
@@ -60,12 +61,14 @@ public class NewTrasfer {// TransferFiles class name
 			//sourcesftpChannel.put(sourcepath, tagetpath + "new.txt");
 			sourcesftpChannel.get(remotePath+remoteFileName,localPath+remoteFileName);// downloading
 			System.out.println(targetftpChannel.toString());
+			//sourcesftpChannel.disconnect(); // disconnect() naresh get once disconnect
 
 			upload(targetftpChannel, sourcepath, tagetpath);
 			
 //			nareshSftpChannel.put(localPath + remoteFileName, nareshTempPath + remoteFileName);   //naresh path sirish 
 			System.out.println("Uploaded to Naresh.."); // session id creation or not showing this line
-
+			//targetftpChannel.connect(); once sirish put disconnect
+			
 		}
 
 		catch (Exception e) {// if
