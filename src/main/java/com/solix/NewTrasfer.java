@@ -28,12 +28,12 @@ public class NewTrasfer {// TransferFiles class name
 		// String localTempPath = null;// String localTempPath variable
 
 		// This are soure inputs
-		sourceip = "13.59.35.124";
+		sourceip = "13.59.35.124"; //naresh
 		sourcepath = "/home/naveen/java/helloword.java";
 		sourceuser = "naveen";
 		sourcepwd = "naveen@01";
 
-		// This are target inputs
+		// This are target inputs siri
 		targetip = "18.188.216.136";
 		tagetpath = "/home/praveen1/java/";
 		targetuser = "praveen1";
@@ -57,12 +57,15 @@ public class NewTrasfer {// TransferFiles class name
 
 			// uploadFile(targetftpChannel,targetSession,sourcepath,tagetpath);
 			//targetftpChannel.put(sourcepath, tagetpath + "new.txt");
-			sourcesftpChannel.put(sourcepath, tagetpath + "new.txt");
+			//sourcesftpChannel.put(sourcepath, tagetpath + "new.txt");
+			sourcesftpChannel.get(remotePath+remoteFileName,localPath+remoteFileName);// downloading
 			System.out.println(targetftpChannel.toString());
 
 			upload(targetftpChannel, sourcepath, tagetpath);
 			
-			targetftpChannel.rm(sourcepath);
+//			nareshSftpChannel.put(localPath + remoteFileName, nareshTempPath + remoteFileName);   //naresh path sirish 
+			System.out.println("Uploaded to Naresh.."); // session id creation or not showing this line
+
 		}
 
 		catch (Exception e) {// if
