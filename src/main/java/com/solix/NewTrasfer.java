@@ -59,7 +59,7 @@ public class NewTrasfer {// TransferFiles class name
 			// uploadFile(targetftpChannel,targetSession,sourcepath,tagetpath);
 			//targetftpChannel.put(sourcepath, tagetpath + "new.txt");
 			//sourcesftpChannel.put(sourcepath, tagetpath + "new.txt");
-			sourcesftpChannel.get(remotePath+remoteFileName,localPath+remoteFileName);// downloading
+			//sourcesftpChannel.get(remotePath+remoteFileName,localPath+remoteFileName);// downloading
 			System.out.println(targetftpChannel.toString());
 			//sourcesftpChannel.disconnect(); // disconnect() naresh get once disconnect
 
